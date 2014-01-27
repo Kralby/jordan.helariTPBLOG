@@ -1,0 +1,19 @@
+{$total} articles correspond à votre recherche
+{foreach $list_news as $news}
+{include file='tpl/article.tpl' article=$news}
+{/foreach}
+<BR><center>
+{if $page-1 !=0}
+	<a href="index.php?r={$rech}&p={$page-1}">Precedent</a>
+{/if}
+{for $i=1 to $nbpage}
+	<a href="index.php?r={$rech}&p={$i}">{$i}</a>
+	{if $i<$nbpage}
+		-
+	{/if}
+{/for}
+	{if $page+1<$i}
+		<a href="index.php?r={$rech}&p={$page+1}">Suivant</a>
+	{/if}
+</center>
+
